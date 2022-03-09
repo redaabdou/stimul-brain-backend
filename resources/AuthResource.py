@@ -92,7 +92,7 @@ class AuthRegisterResource(Resource):
                         user["password"].encode("utf-8"), bcrypt.gensalt())
 
                     newUser = User(password=hashed.decode(
-                        "utf-8"), email=user["email"])
+                        "utf-8"), email=user["email"], username=user["username"])
                     message = Mail(
                         from_email='contact@bidjobs.io',
                         to_emails=user["email"],
